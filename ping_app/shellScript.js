@@ -26,8 +26,36 @@ function displayDirectory() {
     });
 }
 
+
+function pingServer() {
+    url = document.getElementById("url").value;
+    if (url) {
+        var arg = [url]
+    }
+    const ping = spawn('ping', arg)
+
+
+    ping.stdout.on('data', (data) => {
+        showData(data)
+    })
+
+    ping.stderr.on('data', (data) => {
+        showData(data)
+    })
+
+    ping.on('close', (code) => {
+        showData(code)
+    })
+
+
+}
+
 function showData(data) {
 
-    data += '<br><br><br> ' + document.getElementById("output").innerHTML;
+    data += document.getElementById("output").innerHTML;
     document.getElementById("output").innerHTML = data;
+}
+
+function cancelPing() {
+    ping.emit('close')
 }

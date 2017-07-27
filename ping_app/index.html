@@ -9,13 +9,15 @@
     <h1>PING MY SITE</h1>
 
     <form action="">
-        <input type="text" name="dir" id="dir" placeholder="Enter directory path"><br>
-        <button type="button" onclick="displayDirectory();">Display directory content</button>
+        <input type="text" name="dir" id="dir" placeholder="Enter directory path">
+        <button type="button" onclick="displayDirectory();">LS</button><br>
+        <input type="text" name="url" id="url" placeholder="Enter website path">
+        <button type="button" onclick="pingServer();"> PING</button>
+        <button type="button" onclick="cancelPing()"> Cancel PING</button> <br>
     </form>
 
-    <button type="button" onclick="mkdir()"> Create folder</button> <br>
-    <button type="button" onclick="rmdir()"> Delete folder</button> <br>
-    <div id="output"></div>
+
+    <textarea id="output" rows=" 10 " cols="100 "></textarea>
 
 </body>
 <script>
