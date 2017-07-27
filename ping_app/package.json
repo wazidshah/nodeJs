@@ -1,0 +1,15 @@
+{
+    "name": "ping_app",
+    "version": "1.0.0",
+    "description": "A desktop application to pinf to sote or ip and shows its output on console",
+    "main": "index.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "author": "ns23",
+    "license": "ISC",
+    "dependencies": {
+        "electron": "^1.6.11",
+        "shelljs": "^0.7.8"
+    }
+}

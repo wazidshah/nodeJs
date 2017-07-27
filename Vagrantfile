@@ -15,6 +15,9 @@ $baseScript = <<SCRIPT
 		apt-get install -y libxss1
 	  apt-get install -y GConf2
 		apt-get install -y libnss3
+		 apt-get install -y python-pip
+		apt-get install -y youtube-dl
+		apt-get install -y ipython
 		# apt-get install -y libcanberra-gtk*
 SCRIPT
 
@@ -27,7 +30,8 @@ Vagrant.configure(2) do |config|
 	hostname = HOSTNAME_MACHINE
 	locale = "en_GB.UTF.8"
 	# Box
-	config.vm.box = "ubuntu/trusty64"
+	# config.vm.box = "ubuntu/trusty64"
+	config.vm.box = "ubuntu_box"
 	# Shared folders
 	config.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "vagrant"
 
