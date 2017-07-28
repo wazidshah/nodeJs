@@ -1,17 +1,17 @@
 <html>
 
 <head>
-    <title>PING</title>
+    <title>Shell Commands</title>
     <script src="shellScript.js"></script>
 </head>
 
 <body>
-    <h1>PING MY SITE</h1>
+    <h1>SHOW DIRECTORY/PING MY SITE</h1>
 
     <form action="">
         <input type="text" name="dir" id="dir" placeholder="Enter directory path">
         <button type="button" onclick="displayDirectory();">LS</button><br>
-        <input type="text" name="url" id="url" placeholder="Enter website path">
+        <input type="text" name="url" id="url" value="www.google.com" placeholder="Enter website path">
         <button type="button" onclick="pingServer();"> PING</button>
         <button type="button" onclick="cancelPing()"> Cancel PING</button> <br>
     </form>

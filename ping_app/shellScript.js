@@ -26,14 +26,17 @@ function displayDirectory() {
     });
 }
 
+// a global object to store reference to ping varabile
+let x = '';
 
 function pingServer() {
+
     url = document.getElementById("url").value;
     if (url) {
         var arg = [url]
     }
-    const ping = spawn('ping', arg)
-
+    const ping = spawn('ping', arg, { detached: true })
+    x = ping
 
     ping.stdout.on('data', (data) => {
         showData(data)
@@ -44,8 +47,10 @@ function pingServer() {
     })
 
     ping.on('close', (code) => {
-        showData(code)
+        ping.kill("SIGINT");
+        showData("^c ping command terminated by user!!!")
     })
+
 
 
 }
@@ -57,5 +62,7 @@ function showData(data) {
 }
 
 function cancelPing() {
-    ping.emit('close')
+    // console.log("process exit");
+    // x.kill("SIGINT")
+    x.emit('close')
 }
