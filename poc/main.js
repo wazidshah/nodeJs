@@ -53,27 +53,27 @@ var youtudedl = (function() {
 
     }
 
-    function getRequest(api_url) {
-        console.log(api_url);
-        https.get(api_url, function(res) {
-                var body = ''; // Will contain the final response
-                // Received data is a buffer.
-                // Adding it to our body
-                res.on('data', function(data) {
-                    body += data;
+    /*     function getRequest(api_url) {
+            console.log(api_url);
+            https.get(api_url, function(res) {
+                    var body = ''; // Will contain the final response
+                    // Received data is a buffer.
+                    // Adding it to our body
+                    res.on('data', function(data) {
+                        body += data;
+                    });
+                    // After the response is completed, parse it and log it to the console
+                    res.on('end', function() {
+                        var parsed = JSON.parse(body);
+                        // console.log(parsed);
+                        // return parsed;
+                    });
+                })
+                // If any error has occured, log error to console
+                .on('error', function(e) {
+                    console.log("Got error: " + e.message);
                 });
-                // After the response is completed, parse it and log it to the console
-                res.on('end', function() {
-                    var parsed = JSON.parse(body);
-                    // console.log(parsed);
-                    // return parsed;
-                });
-            })
-            // If any error has occured, log error to console
-            .on('error', function(e) {
-                console.log("Got error: " + e.message);
-            });
-    }
+        } */
 
     return {
         parseUrl: parseUrl
